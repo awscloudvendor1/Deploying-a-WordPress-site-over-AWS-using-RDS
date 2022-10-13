@@ -1,0 +1,49 @@
+Deploying a WordPress site over AWS using RDS
+================================================
+Create 2 Security Groups
+1) SG for EC2 Traffic - 80 and 22
+2) SG for RDS - 3306
+
+Create RDS Database
+
+Create EC2 Instance
+====================
+install pip,wordpress,apache
+
+Connect Wordpress with RDS Database
+
+
+In the EC2 Instance Install the package
+====================================
+yum install httpd php php-mysql -y
+cd /var/www/html
+wget https://wordpress.org/wordpress-5.1.1.tar.gz
+tar wordpress.org/wordpress-5.1.1.tar.gz
+cd  wordpress/
+cp -r wordpress/* /var/www/html
+rm -rf wordpress
+rm -rf wordpress-5.1.1.tar.gz
+ls -lah
+chmod -R 755 wp-content/
+chown -R apache:apache wp-content/
+ls -lah
+service httpd start
+chkconfig httpd on
+===============================================
+Browse the Public ip of the EC2 instance wordpress will start
+
+In the wordpress 
+====================
+Databasename = naem for the RDS db
+username = admin
+password = 123
+Database Host = RDSDB Endpoint
+======================================
+
+Create a file wp-config.php an d copy the wordpress content and 
+paste
+
+Run the installation
+======================================================
+Provide the Details and setup username and password
+Login the wordpress
