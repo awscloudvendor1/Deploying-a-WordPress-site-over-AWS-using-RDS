@@ -40,7 +40,7 @@ password = 123
 Database Host = RDSDB Endpoint
 ======================================
 
-Create a file wp-config.php an d copy the wordpress content and 
+Create a file wp-config.php and copy the wordpress content and 
 paste
 
 Run the installation
